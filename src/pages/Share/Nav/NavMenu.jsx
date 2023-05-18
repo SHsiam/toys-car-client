@@ -8,7 +8,7 @@ const NavMenu = () => {
         <Navbar bg="light" variant="light">
         <Container>
           <Navbar.Brand >
-          <Link className='text-decoration-none text-dark' to='/'><img className="rounded w-20 h-20" src={logo}alt="" /><small className="font-bold">Toy Cars</small></Link>
+          <Link className='text-decoration-none text-dark' to='/'><img className="rounded w-20 h-20" src={logo}alt="" /><small className="font-bold">TOY CARS</small></Link>
             
           </Navbar.Brand>
           <Nav>
