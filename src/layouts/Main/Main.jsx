@@ -1,10 +1,16 @@
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavMenu from '../../pages/Share/Nav/NavMenu';
+import { Outlet } from 'react-router-dom';
+import Footer from '../../pages/Share/Footer/Footer';
 
 const Main = () => {
     return (
-        <div>
-            <h2>This is main</h2>
-        </div>
+        <>
+        <NavMenu></NavMenu>
+        <Outlet></Outlet>
+        <Footer></Footer>
+        </>
     );
 };
 
