@@ -26,24 +26,24 @@ const Extrasection = () => {
             </div>
             {/* section 2 brand name */}
             <div className="container text-center">
-            <h2 className='text-center text-6xl mb-4 pt-4'>Our Partners</h2>
+                <h2 className='text-center text-6xl mb-4 pt-4'>Our Partners</h2>
                 <div className="row">
                     <div className="col">
                         <img src={partner1} alt="partner-1" />
                     </div>
                     <div className="col">
-                    <img src={partner2} alt="partner-2" />
+                        <img src={partner2} alt="partner-2" />
                     </div>
                     <div className="col">
-                    <img src={partner3} alt="partner-3" />
+                        <img src={partner3} alt="partner-3" />
                     </div>
                     <div className="col">
-                    <img src={partner4} alt="partner-4" />
+                        <img src={partner4} alt="partner-4" />
                     </div>
-                </div>
                 </div>
             </div>
-            );
+        </div>
+    );
 };
 
-            export default Extrasection;
+export default Extrasection;
