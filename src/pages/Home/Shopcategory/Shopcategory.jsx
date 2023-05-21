@@ -1,13 +1,14 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import car1 from '../../../assets/cars/gallery/car-1.jpg'
-import car2 from '../../../assets/cars/gallery/car-2.jpg'
+import car1 from '../../../assets/cars/gallery/car-2.jpg'
+import car2 from '../../../assets/cars/gallery/car-6.jpg'
 import luxary from '../../../assets/cars/luxury.jpg'
 import luxary1 from '../../../assets/cars/luxury-1.jpg'
 import car3 from '../../../assets/cars/car2.jpg'
 import car4 from '../../../assets/cars/car4.jpg'
 import car5 from '../../../assets/cars/car3.jpg'
 import car6 from '../../../assets/cars/offroad.jpg'
+import { Link } from 'react-router-dom';
 
 const Shopcategory = () => {
     return (
@@ -34,7 +35,9 @@ const Shopcategory = () => {
         <h5 className="card-title">Retro Roadster</h5>
         <p className="card-text">Price: $250</p>
         <p className="card-text">Rating: 5</p>
-        <button type="button" className="btn btn-primary">View Details</button>
+        <Link to='/viewdetails'>
+          <button className="btn btn-primary">View Details</button>
+          </Link>
       </div>
     </div>
   </div>
@@ -45,7 +48,9 @@ const Shopcategory = () => {
         <h5 className="card-title">Heritage Classic</h5>
         <p className="card-text">Price: $150</p>
         <p className="card-text">Rating: 5</p>
-        <button type="button" className="btn btn-primary">View Details</button>
+        <Link to='/viewdetails'>
+          <button className="btn btn-primary">View Details</button>
+          </Link>
       </div>
     </div>
   </div>
@@ -62,7 +67,9 @@ const Shopcategory = () => {
         <h5 className="card-title">Retro Roadster</h5>
         <p className="card-text">Price: $150</p>
         <p className="card-text">Rating: 5</p>
-        <button type="button" className="btn btn-primary">View Details</button>
+        <Link to='/viewdetails'>
+          <button className="btn btn-primary">View Details</button>
+          </Link>
       </div>
     </div>
   </div>
@@ -73,7 +80,9 @@ const Shopcategory = () => {
         <h5 className="card-title">Platinum Pearl</h5>
         <p className="card-text">Price: $250</p>
         <p className="card-text">Rating: 5</p>
-        <button type="button" className="btn btn-primary">View Details</button>
+        <Link to='/viewdetails'>
+          <button className="btn btn-primary">View Details</button>
+          </Link>
       </div>
     </div>
   </div>
@@ -88,7 +97,9 @@ const Shopcategory = () => {
         <h5 className="card-title">Midnight Fury</h5>
         <p className="card-text">Price: $350</p>
         <p className="card-text">Rating: 5</p>
-        <button type="button" className="btn btn-primary">View Details</button>
+        <Link to='/viewdetails'>
+          <button className="btn btn-primary">View Details</button>
+          </Link>
       </div>
     </div>
   </div>
@@ -99,7 +110,9 @@ const Shopcategory = () => {
         <h5 className="card-title">Sprint GT</h5>
         <p className="card-text">Price: $250</p>
         <p className="card-text">Rating: 5</p>
-        <button type="button" className="btn btn-primary">View Details</button>
+        <Link to='/viewdetails'>
+          <button className="btn btn-primary">View Details</button>
+          </Link>
       </div>
     </div>
   </div>
@@ -114,7 +127,9 @@ const Shopcategory = () => {
         <h5 className="card-title">Xtreme Offroader</h5>
         <p className="card-text">Price: $200</p>
         <p className="card-text">Rating: 5</p>
-        <button type="button" className="btn btn-primary">View Details</button>
+        <Link to='/viewdetails'>
+          <button className="btn btn-primary">View Details</button>
+          </Link>
       </div>
     </div>
   </div>
@@ -125,7 +140,9 @@ const Shopcategory = () => {
         <h5 className="card-title">Mountain Beast</h5>
         <p className="card-text">Price: $300</p>
         <p className="card-text">Rating: 5</p>
-        <button type="button" className="btn btn-primary">View Details</button>
+        <Link to='/viewdetails'>
+          <button className="btn btn-primary">View Details</button>
+          </Link>
       </div>
     </div>
   </div>
