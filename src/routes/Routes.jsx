@@ -13,6 +13,7 @@ import SingleCar from "../pages/Categories/AllCategory/SingleCar";
 import PrivateRoute from "./PrivateRoute";
 import Addtoy from "../pages/Categories/AddToy/Addtoy";
 import Mytoy from "../pages/Categories/Mytoy/Mytoy";
+import UpdateToy from "../pages/Categories/UpdateToy/UpdateToy";
 
   const router = createBrowserRouter([
     {
@@ -52,6 +53,11 @@ import Mytoy from "../pages/Categories/Mytoy/Mytoy";
         {
           path:'/mytoys',
           element:<Mytoy></Mytoy>
+        },
+        {
+          path:'/updatetoy/:id',
+          element:<UpdateToy></UpdateToy>,
+          loader:({params}) => fetch(`http://localhost:5000/products/${params.id}`)
         }
       ]
     },

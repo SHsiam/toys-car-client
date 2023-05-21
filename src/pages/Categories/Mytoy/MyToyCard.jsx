@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const MyToyCard = ({myToy,handleDelete}) => {
@@ -54,8 +55,9 @@ const MyToyCard = ({myToy,handleDelete}) => {
             <td>{email}</td>
             <td>{rating}</td>
             <th>
-                
+            <Link to={`/updatetoy/${_id}`}>
                         <button className="btn btn-primary">Update</button>
+                        </Link>
             </th>
         </tr> 
         </tbody>

@@ -1,11 +1,17 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 
-const Addtoy = () => {
+const UpdateToy = () => {
+   const updateToys=useLoaderData();
+   const{_id,image,price,name,sub_category,short_description,rating, available_quantity}=updateToys;
+  
     const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/mytoys';
 
-    const handleAddToy = event =>{
+    const handleUpdateToy=event=>{
         event.preventDefault();
 
         const form = event.target;
@@ -18,7 +24,7 @@ const Addtoy = () => {
         const quantity = form.quantity.value;
         const description = form.description.value;
         const photo = form.photo.value;
-        const addToys={
+        const updateToys={
             customerName:name,
             name:carName,
             sub_category:subcategory,
@@ -27,32 +33,31 @@ const Addtoy = () => {
             rating,
             available_quantity:quantity,
             short_description:description,
-            image:photo,
-            
+            image:photo,  
         }
+        console.log(updateToys);
 
-        console.log(addToys);
-
-        fetch('http://localhost:5000/products/', {
-            method: 'POST', 
+        fetch(`http://localhost:5000/products/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
-            }, 
-            body: JSON.stringify(addToys)
+            },
+            body: JSON.stringify(updateToys)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                alert('Toy Car Added')
-            }
-        })
-
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    alert('Update Car Success')
+                    navigate(from, { replace: true })
+                }
+            })
     }
+   
     return (
         <div>
        
-        <form onSubmit={handleAddToy} >
+        <form onSubmit={handleUpdateToy}  >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="form-control">
                     <label className="label">
@@ -64,13 +69,13 @@ const Addtoy = () => {
                     <label className="label">
                         <span className="label-text">Toy Car Name</span>
                     </label>
-                    <input type="text" name="carname" className="input input-bordered" />
+                    <input type="text" defaultValue={name} name="carname" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">SubCategory</span>
                     </label>
-                    <input type="text" name="subcategory" className="input input-bordered" />
+                    <input type="text" defaultValue={sub_category} name="subcategory" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -82,39 +87,39 @@ const Addtoy = () => {
                     <label className="label">
                         <span className="label-text">Price</span>
                     </label>
-                    <input type="text" name="price" className="input input-bordered" />
+                    <input type="text" defaultValue={price} name="price" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Rating</span>
                     </label>
-                    <input type="number" name="rating" className="input input-bordered" />
+                    <input type="number" defaultValue={rating} name="rating" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Available Quantity</span>
                     </label>
-                    <input type="number" name="quantity" className="input input-bordered" />
+                    <input type="number" defaultValue={available_quantity} name="quantity" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Description</span>
                     </label>
-                    <input type="text" name="description" className="input input-bordered" />
+                    <input type="text" defaultValue={short_description} name="description" className="input input-bordered" />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Photo</span>
                     </label>
-                    <input type="text" name="photo" className="input input-bordered" />
+                    <input type="text" defaultValue={image} name="photo" className="input input-bordered" />
                 </div>
             </div>
             <div className="form-control mt-6">
-                <input className="btn btn-primary btn-block" type="submit" value="Add toy" />
+                <input className="btn btn-primary btn-block" type="submit" value="Update" />
             </div>
         </form>
     </div>
     );
 };
 
-export default Addtoy;
+export default UpdateToy;
