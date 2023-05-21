@@ -46,7 +46,7 @@ import Viewdetails from "../pages/Home/Shopcategory/Viewdetails";
         {
           path:'/singlecar/:id',
           element:<PrivateRoute><SingleCar></SingleCar></PrivateRoute> ,
-          loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+          loader: ({params}) => fetch(`https://toys-car-server-mdshiam4-gmailcom.vercel.app/products/${params.id}`)
         },
         {
           path:'/addtoys',
@@ -59,7 +59,7 @@ import Viewdetails from "../pages/Home/Shopcategory/Viewdetails";
         {
           path:'/updatetoy/:id',
           element:<UpdateToy></UpdateToy>,
-          loader:({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+          loader:({params}) => fetch(`https://toys-car-server-mdshiam4-gmailcom.vercel.app/products/${params.id}`)
         },
         {
           path:'/viewdetails',
