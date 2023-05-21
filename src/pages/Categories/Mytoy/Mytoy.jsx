@@ -1,9 +1,47 @@
+import { useContext, useEffect, useState } from "react";
+import MyToyCard from "./MyToyCard";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const Mytoy = () => {
+    const { user } = useContext(AuthContext);
+    const [myToys, setMyToy] = useState([]);
+
+    const url = `http://localhost:5000/products?email=${user?.email}`;
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setMyToy(data))
+    }, [url]);
+
+    const handleDelete = id => {
+        const proceed = confirm('Are You sure you want to delete');
+        if (proceed) {
+            fetch(`http://localhost:5000/products/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('deleted successful');
+                        const remaining = myToys.filter(mt => mt._id !== id);
+                        setMyToy(remaining);
+                    }
+                })
+        }
+    }
     return (
         <div>
-            <h1>this my toys</h1>
+            
+                        {
+                            myToys.map(myToy => <MyToyCard
+                                key={myToy._id}
+                                myToy={myToy}
+                                handleDelete={handleDelete}
+                                // handleBookingConfirm={handleBookingConfirm}
+                            ></MyToyCard>)
+                        }
         </div>
     );
 };
