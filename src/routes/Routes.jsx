@@ -63,7 +63,7 @@ import Viewdetails from "../pages/Home/Shopcategory/Viewdetails";
         },
         {
           path:'/viewdetails',
-          element:<Viewdetails></Viewdetails>
+          element: <PrivateRoute><Viewdetails></Viewdetails></PrivateRoute>
         }
       ]
     },
