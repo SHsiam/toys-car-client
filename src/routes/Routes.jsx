@@ -23,7 +23,8 @@ import UpdateToy from "../pages/Categories/UpdateToy/UpdateToy";
       children:[
         {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+
         },
         {
           path:'/login',
@@ -48,11 +49,11 @@ import UpdateToy from "../pages/Categories/UpdateToy/UpdateToy";
         },
         {
           path:'/addtoys',
-          element:<Addtoy></Addtoy>,
+          element:<PrivateRoute><Addtoy></Addtoy></PrivateRoute>,
         },
         {
           path:'/mytoys',
-          element:<Mytoy></Mytoy>
+          element:<PrivateRoute><Mytoy></Mytoy></PrivateRoute>
         },
         {
           path:'/updatetoy/:id',
