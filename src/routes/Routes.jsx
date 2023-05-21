@@ -11,6 +11,8 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AllToys from "../pages/Categories/AllCategory/AllToys";
 import SingleCar from "../pages/Categories/AllCategory/SingleCar";
 import PrivateRoute from "./PrivateRoute";
+import Addtoy from "../pages/Categories/AddToy/Addtoy";
+import Mytoy from "../pages/Categories/Mytoy/Mytoy";
 
   const router = createBrowserRouter([
     {
@@ -42,6 +44,14 @@ import PrivateRoute from "./PrivateRoute";
           path:'/singlecar/:id',
           element:<PrivateRoute><SingleCar></SingleCar></PrivateRoute> ,
           loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+        },
+        {
+          path:'/addtoys',
+          element:<Addtoy></Addtoy>,
+        },
+        {
+          path:'/mytoys',
+          element:<Mytoy></Mytoy>
         }
       ]
     },

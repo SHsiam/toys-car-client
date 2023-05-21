@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const Toystable = ({product}) => {
-    const{_id,name,price,sub_category,available_quantity}=product;
+    const{_id,customerName,name,price,sub_category,available_quantity}=product;
     return (
         <div>
              <div className="overflow-x-auto">
@@ -19,7 +19,7 @@ const Toystable = ({product}) => {
     </thead>
     <tbody >
       <tr>
-        <td></td> 
+        <td>{customerName}</td> 
         <td>{name}</td> 
         <td>{sub_category}</td> 
         <td>{price}</td> 
