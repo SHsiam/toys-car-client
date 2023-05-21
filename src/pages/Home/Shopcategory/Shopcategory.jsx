@@ -14,8 +14,8 @@ const Shopcategory = () => {
     return (
         <div className='text-center'>
 <Tabs className='bg-slate-200'>
-<TabList className='text-2xl mb-4 pt-4'>
-      <Tab >Toy Cars Sub Category</Tab>
+<TabList className='text-lg mb-4'>
+      <Tab >Toy Cars</Tab>
 
       </TabList>
     <TabList>

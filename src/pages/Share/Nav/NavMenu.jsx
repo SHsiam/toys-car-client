@@ -18,7 +18,7 @@ const NavMenu = () => {
         <Navbar className="bg-slate-300" variant="light">
         <Container>
           <Navbar.Brand >
-          <Link className='text-decoration-none text-dark' to='/'><img className="rounded w-20 h-20" src={logo}alt="" /><small className="font-bold">TOY CARS</small></Link>
+          <Link className='text-decoration-none text-dark' to='/'><img className="rounded w-12 h-12" src={logo}alt="" /><small className="font-bold">TOY CARS</small></Link>
             
           </Navbar.Brand>
           <Nav>
@@ -51,14 +51,8 @@ const NavMenu = () => {
                       />
                     </div>
                   </div>
-                  <button onClick={handleLogout}>Logout</button></span> : <Link className='text-decoration-none text-dark' to='#'><small>Profile</small> </Link>
+                  <button onClick={handleLogout}>Logout</button></span> :  <Link className='text-decoration-none text-dark' to='/login'><small className="font-semibold">Login</small></Link>
               }
-  
-            </Nav.Link>
-            <Nav.Link>
-             
-              <Link className='text-decoration-none text-dark' to='/login'><small className="font-semibold">Login</small></Link>
-              
             </Nav.Link>
           </Nav>
         </Container>
