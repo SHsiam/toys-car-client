@@ -14,7 +14,6 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <Shopcategory></Shopcategory>
-  
             <Extrasection></Extrasection>
  
     </div>

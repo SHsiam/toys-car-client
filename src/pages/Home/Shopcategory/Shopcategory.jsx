@@ -13,11 +13,11 @@ import { Link } from 'react-router-dom';
 const Shopcategory = () => {
     return (
         <div className='text-center'>
-<Tabs>
+<Tabs className='bg-slate-200'>
+<TabList className='text-2xl mb-4 pt-4'>
+      <Tab >Toy Cars Sub Category</Tab>
 
-      <Tab>Toy Cars Sub Category</Tab>
-
-    
+      </TabList>
     <TabList>
       <Tab>Classic</Tab>
       <Tab>Luxury</Tab>
